@@ -1,5 +1,5 @@
 #challenge1
-
+#HI
 number = int(input("Enter a number: "))
 length = int(input("Enter the list length: "))
 
@@ -14,7 +14,7 @@ print(f"number {number} lenght {i}: {my_list}")
 #challenge2
 
 user_word = input("Enter a word: ")
-# Create an empty string for the result.
+# NOW Create an empty string for the result.
 new_word = ""
 
 
