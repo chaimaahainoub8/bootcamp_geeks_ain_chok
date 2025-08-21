@@ -1,3 +1,5 @@
+import random
+
 # ------ Exercise 1
 keys = ['Ten', 'Twenty', 'Thirty']
 values = [10, 20, 30]
@@ -132,7 +134,7 @@ describe_city("New York", "USA")
 
 # ------ Exercise 5
 
-import random
+
 
 def check_random_number(user_number):
   if not 1 <= user_number <= 100:
@@ -163,7 +165,7 @@ make_shirt(text="Python is Fun", size="extra large")
 
 
 # ------ Exercise 7
-import random
+
 
 def get_random_temp():
  
@@ -189,7 +191,7 @@ main()
 
 """BOUNUS EXERCISE 7"""
 
-import random
+
 
 def get_random_temp_from_month(month):
 
