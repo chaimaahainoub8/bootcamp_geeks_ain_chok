@@ -1,28 +1,38 @@
-#challenge1
-#HI
-number = int(input("Enter a number: "))
-length = int(input("Enter the list length: "))
+# ------ Challenge 1
+from datetime import date
 
+birthdate_str = input("Enter your birthdate (DD/MM/YYYY): ")
 
-my_list = []
+day = int(birthdate_str[0:2])
+month = int(birthdate_str[3:5])
+year = int(birthdate_str[6:10])
 
-for i in range(1, length + 1):
-    my_list.append(number * i)
-print(f"number {number} lenght {i}: {my_list}")
+today = date.today()
+age = today.year - year - ((today.month, today.day) < (month, day))
 
-#---------------------------------------------------------------------------
-#challenge2
+last_digit_of_age = age % 10
 
-user_word = input("Enter a word: ")
-# NOW Create an empty string for the result.
-new_word = ""
+candles = "i" * last_digit_of_age
 
+cake = f"""
+    __{candles}__
+    |:H:a:p:p:y:|
+  __|___________|__
+ |^^^^^^^^^^^^^^^^^|
+ |:B:i:r:t:h:d:a:y:|
+ |                 |
+ ~~~~~~~~~~~~~~~~~~~
+"""
 
-for letter in user_word:
-  
-    if not new_word or letter != new_word[-1]:
-       
-        new_word += letter
+is_leap = False
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    is_leap = True
 
+if is_leap:
+    print(cake)
+    print(cake)
+else:
+    print(cake)
 
-print(f"user's word :{user_word} -> {new_word}")
+# ------ Challenge 2
+
