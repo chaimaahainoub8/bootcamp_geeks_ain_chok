@@ -1,61 +1,36 @@
-# rock-paper-scissors.py
-
 from game import Game
 
 def get_user_menu_choice():
-    """
-    Displays the menu and gets the user's choice.
-    Validates that the choice is one of the allowed options.
-    """
     print("\nMenu:")
     print("(g) Play a new game")
-    print("(s) Show scores and quit")
-    print("(q) Quit")
-
-    valid_choices = ['g', 's', 'q']
-    user_choice = ''
-    while user_choice not in valid_choices:
-        user_choice = input("Enter your choice (g/s/q): ").lower()
-    return user_choice
+    print("(x) Show scores and exit")
+    choice = input(": ")
+    return choice
 
 def print_results(results):
-    """
-    Prints the game results in a user-friendly format.
-    """
-    print("\n--- Game Results ---")
-    print(f"Wins: {results.get('win', 0)}")
-    print(f"Losses: {results.get('loss', 0)}")
-    print(f"Draws: {results.get('draw', 0)}")
-    print("Thank you for playing!")
+    print("\nGame Results:")
+    print(f"You won {results['win']} times")
+    print(f"You lost {results['loss']} times")
+    print(f"You drew {results['draw']} times")
+    print("\nThank you for playing!")
 
 def main():
-    """
-    The main function that runs the game loop.
-    """
-    game_results = {'win': 0, 'loss': 0, 'draw': 0}
+    scores = {'win': 0, 'loss': 0, 'draw': 0}
     
     while True:
-        choice = get_user_menu_choice()
-
-        if choice == 'g':
-            # Create a new Game object and play a round
+        menu_choice = get_user_menu_choice()
+        
+        if menu_choice == 'g':
             new_game = Game()
-            result = new_game.play()
+            game_result = new_game.play()
+            scores[game_result] += 1
             
-            # Update the results dictionary
-            if result in game_results:
-                game_results[result] += 1
-
-        elif choice == 's':
-            # Show scores and then exit
-            print_results(game_results)
+        elif menu_choice == 'x':
+            print_results(scores)
             break
+        
+        else:
+            print("Invalid choice. Please enter 'g' or 'x'.")
 
-        elif choice == 'q':
-            # Quit the game immediately
-            print("Goodbye!")
-            break
-
-# This line ensures that the main() function is called only when the script is run directly
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
