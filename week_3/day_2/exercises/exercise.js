@@ -146,5 +146,4 @@ const secretName = firstLetters.join('');
 
 console.log(secretName);
 
-//-------exercise 8-------//
 
