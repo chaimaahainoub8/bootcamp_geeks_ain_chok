@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Only Letters Challenge</title>
+</head>
+<body>
+
+    <h2>Daily challenge : Show only the letters</h2>
+    <p>Please type in the box below. Only letters will be accepted.</p>
+
+    <input type="text" id="letterInput">
+
+    <script>
+        // 1. Get the input box element from the page
+        const myInput = document.getElementById('letterInput');
+
+        // 2. Add a listener that waits for an 'input' event
+        myInput.addEventListener('input', function() {
+            
+            // 3. When the user types, replace anything that is NOT a letter with nothing ('')
+            this.value = this.value.replace(/[^a-zA-Z]/g, '');
+        });
+    </script>
+
+</body>
+</html>
