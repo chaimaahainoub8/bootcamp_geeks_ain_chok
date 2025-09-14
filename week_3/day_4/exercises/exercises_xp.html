@@ -1,0 +1,249 @@
+// ===== Exercise 1
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Exercise</title>
+    <style>
+       
+        .fade-out {
+            transition: opacity 1s ease-out;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <article>
+        <h1>Some Facts</h1>
+        <h2>The Chocolate</h2>
+        <h3>History of the chocolate</h3>
+        <p>Chocolate is made from tropical Theobroma cacao tree seeds. Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p>After the European discovery of the Americas, chocolate became very popular in the wider world, and its demand exploded.</p>
+        <p>Chocolate has since become a popular food product that millions enjoy every day, thanks to its unique, rich, and sweet taste.</p>
+        <p>But what effect does eating chocolate have on our health?</p>
+    </article>
+
+    <button id="boldButton">Make Paragraphs Bold</button>
+
+    <script>
+        // --- Solution for Question 1 ---
+        const h1Element = document.querySelector('h1');
+        console.log(h1Element);
+
+        // --- Solution for Question 2 ---
+        const lastParagraph = document.querySelector('article p:last-of-type');
+        lastParagraph.remove();
+
+        // --- Solution for Question 3 ---
+        const h2Element = document.querySelector('h2');
+        h2Element.addEventListener('click', () => {
+            h2Element.style.backgroundColor = 'red';
+        });
+
+        // --- Solution for Question 4 ---
+        const h3Element = document.querySelector('h3');
+        h3Element.addEventListener('click', () => {
+            h3Element.style.display = 'none';
+        });
+
+        // --- Solution for Question 5 ---
+        const boldButton = document.getElementById('boldButton');
+        const allParagraphs = document.querySelectorAll('p');
+
+        boldButton.addEventListener('click', () => {
+            // We loop through each paragraph and make it bold
+            for (const p of allParagraphs) {
+                p.style.fontWeight = 'bold';
+            }
+        });
+
+        // --- Solution for Question 6 (BONUS) ---
+        h1Element.addEventListener('mouseover', () => {
+            const randomSize = Math.floor(Math.random() * 101); // Random number between 0 and 100
+            h1Element.style.fontSize = `${randomSize}px`;
+        });
+
+        // --- Solution for Question 7 (BONUS) ---
+        const secondParagraph = document.querySelectorAll('p')[1]; // Lists start at 0, so [1] is the second element
+        secondParagraph.addEventListener('mouseover', () => {
+            secondParagraph.classList.add('fade-out');
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+===== Exercise 2
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Formulaire Complet</title>
+</head>
+<body>
+
+    <form>
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="firstname"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lastname"><br><br>
+      <input type="submit" id="submit" value="Submit">
+    </form> 
+
+    <ul class="usersAnswer"></ul>
+
+    <script>
+        const formElement = document.querySelector('form');
+        console.log("Question 1 - Le formulaire :", formElement);
+
+        const firstNameInputId = document.getElementById('fname');
+        const lastNameInputId = document.getElementById('lname');
+        console.log("Question 2 - Input Prénom par ID :", firstNameInputId);
+        console.log("Question 2 - Input Nom par ID :", lastNameInputId);
+
+        const firstNameInputName = document.getElementsByName('firstname');
+        const lastNameInputName = document.getElementsByName('lastname');
+        console.log("Question 3 - Input Prénom par Name :", firstNameInputName);
+        console.log("Question 3 - Input Nom par Name :", lastNameInputName);
+
+        formElement.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const firstNameValue = firstNameInputId.value;
+            const lastNameValue = lastNameInputId.value;
+
+            if (firstNameValue !== "" && lastNameValue !== "") {
+                const ul = document.querySelector('.usersAnswer');
+
+                const liFirstName = document.createElement('li');
+                liFirstName.textContent = firstNameValue;
+
+                const liLastName = document.createElement('li');
+                liLastName.textContent = lastNameValue;
+                
+                ul.appendChild(liFirstName);
+                ul.appendChild(liLastName);
+            } else {
+                alert("S'il vous plaît, remplissez les deux champs !");
+            }
+        });
+    </script>
+
+</body>
+</html>
+// ===== Exercise 3
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transform the sentence</title>
+</head>
+<body>
+
+    <p>
+        <strong>Hello</strong> I hope you are enjoying <strong>this</strong> class. At the
+        <strong>end</strong> you <strong>will</strong> be great Developers!
+        <strong>Enjoy</strong> the JavaScript lessons
+    </p>
+
+    <script>
+        let allBoldItems;
+
+        function getBoldItems() {
+          allBoldItems = document.getElementsByTagName("strong");
+        }
+
+        function highlight() {
+          for (const item of allBoldItems) {
+            item.style.color = "blue";
+          }
+        }
+
+        function returnItemsToDefault() {
+          for (const item of allBoldItems) {
+            item.style.color = "black";
+          }
+        }
+
+        getBoldItems();
+
+        let p = document.querySelector("p");
+
+        p.addEventListener("mouseover", highlight);
+        p.addEventListener("mouseout", returnItemsToDefault);
+    </script>
+
+</body>
+</html>
+
+// ===== Exercise 4
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Volume of a Sphere</title>
+    <style>
+        body {
+            padding-top: 30px;
+        }
+
+        label, input {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <p>Input radius value and get the volume of a sphere.</p>
+    <form id="MyForm">
+        <label for="radius">Radius</label>
+        <input type="text" name="radius" id="radius" required>
+        <label for="volume">Volume</label>
+        <input type="text" name="volume" id="volume">
+        <input type="submit" value="Calculate" id="submit">
+    </form>
+
+    <script>
+        // On sélectionne le formulaire pour pouvoir l'utiliser
+        const form = document.getElementById('MyForm');
+
+        // On crée la fonction qui va faire le calcul
+        function calculateVolume(event) {
+            // 1. Empêche la page de se recharger toute seule
+            event.preventDefault();
+
+            // 2. On récupère la valeur entrée dans le champ "radius"
+            const radius = document.getElementById('radius').value;
+
+            // On s'assure que le radius n'est pas vide
+            if (radius === '') {
+                return; // On arrête la fonction si c'est vide
+            }
+
+            // 3. On calcule le volume avec la formule mathématique
+            // V = (4/3) * PI * r^3
+            const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+
+            // 4. On affiche le résultat dans le champ "volume"
+            // .toFixed(2) permet de garder seulement 2 chiffres après la virgule
+            document.getElementById('volume').value = volume.toFixed(2);
+        }
+
+        // On dit au formulaire d'exécuter notre fonction "calculateVolume" 
+        // à chaque fois que quelqu'un clique sur le bouton "submit"
+        form.addEventListener('submit', calculateVolume);
+    </script>
+
+</body>
+</html>
+
+// ===== Exercise ...
