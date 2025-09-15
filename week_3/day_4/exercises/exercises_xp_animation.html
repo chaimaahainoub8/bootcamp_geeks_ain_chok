@@ -1,0 +1,96 @@
+// ===== Exercise 1
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Volume of a Sphere</title>
+    <style>
+        body {
+            padding-top: 30px;
+        }
+
+        label, input {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <p>Input radius value and get the volume of a sphere.</p>
+    <form id="MyForm">
+        <label for="radius">Radius</label>
+        <input type="text" name="radius" id="radius" required>
+        <label for="volume">Volume</label>
+        <input type="text" name="volume" id="volume">
+        <input type="submit" value="Calculate" id="submit">
+    </form>
+
+    <script>
+        const form = document.getElementById('MyForm');
+
+        function calculateVolume(event) {
+            event.preventDefault();
+            const radius = document.getElementById('radius').value;
+            
+            if (radius === '') {
+                return;
+            }
+
+            const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+            document.getElementById('volume').value = volume.toFixed(2);
+        }
+
+        form.addEventListener('submit', calculateVolume);
+    </script>
+
+</body>
+</html>
+// ===== Exercise 2
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+</head>
+<body>
+
+<p><button onclick="myMove()">Click Me</button></p>
+
+<div id="container">
+  <div id="animate"></div>
+</div>
+
+<script>
+function myMove() {
+  let elem = document.getElementById("animate");   
+  
+  let pos = 0;
+  
+  let id = setInterval(frame, 1);
+  
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+</script>
+
+</body>
+</html>
+
