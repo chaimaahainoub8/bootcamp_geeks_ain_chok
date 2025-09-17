@@ -1,0 +1,34 @@
+// ===== Exercise 1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiselector</title>
+</head>
+<body>
+    
+<select id = "genres">  
+    <option value = "rock">Rock</option>
+    <option value = "blues" selected>Blues</option>
+</select>
+<script>
+    const selectElement = document.getElementById('genres');
+    console.log("selected value is: " + selectElement.value);
+
+    const newOption = document.createElement('option');
+    newOption.textContent = "Classic";
+    newOption.value = "classic";
+    selectElement.appendChild(newOption);
+    selectElement.value = "classic";
+    console.log("selected value is: " + selectElement.value);
+</script>
+</body>
+</html>
+// ===== Exercise 2
+
+// ===== Exercise 3
+
+// ===== Exercise 4
+
+// ===== Exercise ...
