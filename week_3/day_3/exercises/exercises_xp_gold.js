@@ -54,4 +54,4 @@ let table = document.body.firstElementChild;
         // Set the background color of that cell to red
         cell.style.backgroundColor = 'red';
     }
-// ===== Exercise ...
+// ===== Exercise 
