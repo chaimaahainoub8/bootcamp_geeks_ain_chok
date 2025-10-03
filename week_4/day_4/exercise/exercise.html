@@ -1,0 +1,92 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 1: HTML Form</title>
+</head>
+<body>
+<!-- exercise 1 -->
+
+    <h1>My First Form</h1>
+
+    <form action="" method="GET">
+        
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+        
+        <input type="submit" value="Send">
+        
+    </form>
+
+    
+<!-- Question and Answer -->
+ <!-- Question: When you click the Send button, the form will be submitted with a GET method.
+Answer: This is handled by the method="GET" attribute in the <form> tag. 
+    Question: Where will the sent data appear?
+Answer: Because we are using the "GET" method, the data will appear in the browser's URL address bar after clicking "Send".-->
+
+<!-- exercise 2 -->
+
+    <h1>My second Form</h1>
+
+    <form method="POST" action="">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br><br>
+        <input type="submit" value="Send">
+    </form>
+<!-- Question and Answer -->
+ <!--
+the answer is: The sent data will appear in the "Payload" (or "Request Body") 
+  section of the request details in the browser's Network Tab.
+
+
+-->
+
+<!-- exercise 3-->
+ <script>
+    // This is the original JavaScript object from the exercise
+const mariogame = {
+    detail: "An amazing game!",
+    characters: {
+        mario: {
+            description: "Small and jumpy. Likes princesses.",
+            height: 10,
+            weight: 3,
+            speed: 12,
+        },
+        bowser: {
+            description: "Big and green, Hates princesses.",
+            height: 16,
+            weight: 6,
+            speed: 4,
+        },
+        princessPeach: {
+            description: "Beautiful princess.",
+            height: 12,
+            weight: 2,
+            speed: 2,
+        },
+    },
+};
+
+// --- Answer for Question 1 ---
+// Convert the JS object to a JSON string and "pretty print" it
+const marioJSON = JSON.stringify(mariogame, null, 2);
+console.log("--- This is the JSON String ---");
+console.log(marioJSON);
+
+
+// --- Answer for Question 2 ---
+// The exercise likely meant to ask how to convert it back.
+// Convert the JSON string back into a JavaScript object
+const mariogameFromJSON = JSON.parse(marioJSON);
+console.log("--- This is the JS Object converted back from JSON ---");
+console.log(mariogameFromJSON);
+
+
+ </script>
+</body>
+</html>
