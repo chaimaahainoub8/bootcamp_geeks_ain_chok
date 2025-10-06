@@ -1,0 +1,74 @@
+body {
+    background-color: #0c1a2c; 
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); /* Background pattern like in the image */
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.title {
+    font-family: 'SEGA LOGO FONT', sans-serif; /* The special font */
+    color: #0ccac4;
+    font-weight: 200;
+    font-size: 3.5em;
+}
+
+
+#search-box {
+    padding: 15px;
+    width: 300px;
+    border: 2px solid #0ccac4;
+    background-color: #cbeef3;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+
+.robot-grid {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+}
+
+
+.robot-card {
+    background-color: #007c7a; 
+    border: 1px solid #0ccac4;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 220px;
+    transition: transform 0.2s; 
+}
+
+.robot-card:hover {
+    transform: scale(1.05);
+}
+
+.robot-card img {
+    background-color: #2e9b99;
+    border-radius: 50%; 
+    padding: 10px;
+    width: 180px;
+}
+
+.robot-card h2 {
+    color: white;
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.robot-card p {
+    color: #cbeef3;
+    font-size: 0.9em;
+    word-wrap: break-word; 
+}
