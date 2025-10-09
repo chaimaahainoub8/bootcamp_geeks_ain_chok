@@ -1,4 +1,4 @@
-// The provided data array
+// Le tableau de données initial
 const gameInfo = [
   { username: "john", team: "red", score: 5, items: ["ball", "book", "pen"] },
   { username: "becky", team: "blue", score: 10, items: ["tape", "backpack", "pen"] },
@@ -6,16 +6,28 @@ const gameInfo = [
   { username: "tyson", team: "green", score: 1, items: ["book", "pen"] },
 ];
 
-// Question 1: Create an array that contains all the usernames with an exclamation point.
-const usernames = gameInfo.map(player => `${player.username}!`);
-console.log("Usernames:", usernames);
+// 1. Créer un tableau avec les noms d'utilisateur et un "!"
+const usernames = []; // On initialise un tableau vide
 
-// Question 2: Create an array with the usernames of players with a score bigger than 5.
-const winners = gameInfo
-  .filter(player => player.score > 5)
-  .map(player => player.username);
-console.log("Winners:", winners);
+gameInfo.forEach(player => {
+  // Pour chaque joueur, on ajoute son nom + "!" au tableau
+  usernames.push(player.username + "!");
+});
 
-// Question 3: Find and display the total score of the users.
-const totalScore = gameInfo.reduce((total, player) => total + player.score, 0);
-console.log("Total Score:", totalScore);
+console.log(usernames);
+// Résultat attendu : ["john!", "becky!", "susy!", "tyson!"]
+
+
+// 2. Créer un tableau des joueurs avec un score > 5
+const winners = []; // On initialise un tableau vide pour les gagnants
+
+gameInfo.forEach(player => {
+  // On vérifie si le score du joueur est strictement supérieur à 5
+  if (player.score > 5) {
+    // Si c'est le cas, on ajoute son nom au tableau des gagnants
+    winners.push(player.username);
+  }
+});
+
+console.log(winners);
+// Résultat attendu : ["becky", "susy"]
