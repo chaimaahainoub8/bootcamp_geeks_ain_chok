@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire HTML</title>
+    <style>
+        /* Un peu de style pour ressembler à l'image */
+        body {
+            font-family: sans-serif;
+        }
+        .form-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 300px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-container input[type="text"] {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Exercice : Formulaire HTML</h1>
+
+    <div class="form-container">
+        <form action="resultat.html" method="GET">
+            <label for="name">NAME:</label>
+            <input type="text" id="name" name="name" value="John">
+            <br><br>
+            <label for="lastname">LAST NAME:</label>
+            <input type="text" id="lastname" name="lastname" value="Doe">
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>
