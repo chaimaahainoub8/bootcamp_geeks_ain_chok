@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Citations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Générateur de Citations</h1>
+
+        <section id="quote-display-section">
+            <p class="quote-text">Cliquez sur le bouton pour afficher une citation.</p>
+            <p class="quote-author"></p>
+        </section>
+
+        <div class="main-buttons">
+            <button id="generate-quote-btn">Générer une citation</button>
+        </div>
+
+        <div id="quote-info-buttons" class="hidden">
+            <button id="char-count-spaces-btn">Caractères (avec espaces)</button>
+            <button id="char-count-no-spaces-btn">Caractères (sans espaces)</button>
+            <button id="word-count-btn">Nombre de mots</button>
+            <button id="like-btn">❤️ Like (<span id="like-count">0</span>)</button>
+            <p id="info-result"></p>
+        </div>
+        
+        <hr>
+
+        <div class="form-container">
+            <h2>Ajouter une nouvelle citation</h2>
+            <form id="add-quote-form">
+                <input type="text" id="new-quote-text" placeholder="Entrez la citation" required>
+                <input type="text" id="new-quote-author" placeholder="Entrez l'auteur" required>
+                <button type="submit">Ajouter la citation</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="form-container">
+            <h2>Filtrer par auteur</h2>
+            <form id="filter-author-form">
+                <input type="text" id="author-filter-input" placeholder="Nom de l'auteur" required>
+                <button type="submit">Filtrer</button>
+            </form>
+            <div id="filter-navigation" class="hidden">
+                <button id="prev-quote-btn">Précédent</button>
+                <button id="next-quote-btn">Suivant</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
