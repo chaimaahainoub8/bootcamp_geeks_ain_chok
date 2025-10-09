@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 4, author: "Albert Einstein", quote: "La folie, c'est de faire toujours la même chose et de s'attendre à un résultat différent.", likes: 0 }
     ];
 
-    let lastQuoteIndex = -1;
-    let currentQuote = null;
-    let filteredQuotes = [];
-    let currentFilterIndex = 0;
+    let lastQuoteIndex = -1;// Pour éviter la répétition immédiate
+    let currentQuote = null;// Pour stocker la citation actuellement affichée
+    let filteredQuotes = [];// Pour stocker les citations filtrées par auteur
+    let currentFilterIndex = 0;// Pour naviguer dans les citations filtréesgi
 
     const quoteTextElem = document.querySelector('.quote-text');
     const quoteAuthorElem = document.querySelector('.quote-author');
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             likeCountElem.textContent = currentQuote.likes;
         }
     });
-
+ 
     const filterAuthorForm = document.getElementById('filter-author-form');
     filterAuthorForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filterAuthorForm.reset();
     });
 
+// Navigation buttons for filtered quotes
     document.getElementById('next-quote-btn').addEventListener('click', () => {
         currentFilterIndex = (currentFilterIndex + 1) % filteredQuotes.length;
         displayQuote(filteredQuotes[currentFilterIndex]);
