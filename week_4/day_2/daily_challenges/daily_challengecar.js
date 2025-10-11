@@ -33,4 +33,4 @@ console.log("--- Result Part I ---");
 console.log(getCarHonda(inventory)); // Displays the sentence about the Honda
 
 console.log("\n--- Result Part II ---");
-console.log(sortCarInventoryByYear(inventory)); // Displays the sorted listadd 
+console.log(sortCarInventoryByYear(inventory)); // Displays the sorted list
