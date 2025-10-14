@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="converter-wrapper">
+        <h1>Currency Converter</h1>
+
+        <div class="form-group">
+            <label for="from-currency">From:</label>
+            <select id="from-currency"></select>
+        </div>
+
+        <div class="swap-container">
+            <button id="swap-btn">
+                <img src="https://raw.githubusercontent.com/devtlv/studentsGitHub/refs/heads/master/Images%20cours%20%C3%A0%20h%C3%A9berger%20-%2006.03.2024/Week%207%20-%20Adv%20%26%20Asynchronous%20Javascript/W7D5/148588337-233540b7-aac6-4b25-bbf4-520765380f59.png" alt="Swap currencies">
+            </button>
+        </div>
+
+        <div class="form-group">
+            <label for="to-currency">To:</label>
+            <select id="to-currency"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" value="1" min="0">
+        </div>
+
+        <button id="convert-btn">Convert</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
