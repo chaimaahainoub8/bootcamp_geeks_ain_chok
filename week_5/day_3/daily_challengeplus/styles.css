@@ -1,0 +1,107 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    /* Added the cool background back in */
+    background-image: url('https://i.imgur.com/e580aTj.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.pokedex-container {
+    position: relative;
+    width: 600px;
+    height: 850px; 
+    background-image: url('pokedex.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pokemon-logo {
+    position: absolute;
+    top: 18%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; 
+}
+
+.pokemon-screen {
+    position: absolute;
+    top: 23.5%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pokemon-sprite {
+    max-width: 180px;
+    max-height: 180px;
+    image-rendering: pixelated; 
+}
+
+.pokemon-data-screen {
+    position: absolute;
+    top: 54%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 290px;
+    height: 165px; 
+    padding: 10px;
+    box-sizing: border-box; 
+    text-align: center;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Added the new font family */
+    font-family: 'Press Start 2P', cursive;
+}
+
+#pokemon-name {
+    margin: 0 0 4px 0; /* ✅ Final Size Adjustment */
+    text-transform: capitalize;
+    font-size: 1.2em; /* ✅ Final Size Adjustment */
+    line-height: 1; /* ✅ Added for better spacing */
+}
+
+.pokemon-data-screen p {
+    margin: 4px 0; /* ✅ Final Size Adjustment */
+    font-size: 0.5em; /* ✅ Final Size Adjustment */
+}
+
+.button {
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#prev-btn {
+    border: 2px solid red;    
+    top: 61%;
+    left: 16%;
+    width:30px;
+    height: 30px;
+}
+#next-btn {
+    border: 2px solid  rgb(18, 199, 249);
+    top: 61%;
+    left: 24%;
+    width: 30px;
+    height: 30px;
+}
+
+#random-btn {
+    border : 2px solid rgb(255, 255, 0);
+    top: 60%;
+    left: 82%;
+    width: 50px;
+    height: 50px;
+}
