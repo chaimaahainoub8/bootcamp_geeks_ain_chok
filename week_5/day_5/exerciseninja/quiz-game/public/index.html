@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express.js Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="quiz-container" id="quiz-container">
+    <div id="quiz-header">
+      <h2 id="question-text">Question Text</h2>
+      <div id="score-text">Score: 0</div>
+    </div>
+    
+    <div id="answer-buttons" class="btn-grid">
+      </div>
+    
+    <div id="feedback-text">
+      </div>
+    
+    <button id="next-btn" class="next-btn hidden">Next</button>
+  </div>
+
+  <div id="results-container" class="results-container hidden">
+    <h2>Quiz Complete!</h2>
+    <p id="final-score-text">Your final score is 0 / 0</p>
+    <button id="restart-btn">Restart Quiz</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

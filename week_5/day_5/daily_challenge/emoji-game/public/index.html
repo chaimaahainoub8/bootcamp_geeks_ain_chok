@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Guessing Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        #game-container { max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        #emoji-display { font-size: 5rem; margin: 20px; }
+        #options-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .option-btn { padding: 15px; font-size: 1.1rem; cursor: pointer; }
+        #feedback { font-size: 1.2rem; font-weight: bold; min-height: 2em; }
+        .correct { color: green; }
+        .incorrect { color: red; }
+        #leaderboard { max-width: 400px; margin: 20px auto; }
+        #leaderboard-list li { list-style-type: decimal; text-align: left; margin: 5px; }
+        #end-game-form { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>Emoji Guessing Game</h1>
+    <h2>Score: <span id="score">0</span></h2>
+
+    <div id="game-container">
+        <div id="emoji-display">❓</div>
+        <div id="options-container">
+            </div>
+        <p id="feedback"></p>
+    </div>
+
+    <div id="end-game-form" style="display: none;">
+        <h3>Game Over! Final Score: <span id="final-score">0</span></h3>
+        <input type="text" id="player-name" placeholder="Enter your name">
+        <button id="submit-score-btn">Submit to Leaderboard</button>
+    </div>
+
+    <div id="leaderboard">
+        <h2>Leaderboard</h2>
+        <ol id="leaderboard-list">
+            </ol>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

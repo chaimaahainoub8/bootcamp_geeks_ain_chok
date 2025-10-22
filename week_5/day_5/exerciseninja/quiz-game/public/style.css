@@ -1,0 +1,114 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f7f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.quiz-container, .results-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 90%;
+  max-width: 550px;
+}
+
+#quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+#question-text {
+  margin: 0;
+  font-size: 1.25em;
+}
+
+#score-text {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.btn {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: #e2e6ea;
+  border-color: #b1b9c1;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Classes to be added by JavaScript */
+.btn.correct {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.btn.wrong {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+#feedback-text {
+  margin-top: 15px;
+  font-size: 1.1em;
+  font-weight: bold;
+  height: 1.2em; /* Reserve space so layout doesn't jump */
+}
+
+#feedback-text.correct {
+  color: #28a745;
+}
+
+#feedback-text.wrong {
+  color: #dc3545;
+}
+
+.next-btn, #restart-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.next-btn:hover, #restart-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Utility class to hide elements */
+.hidden {
+  display: none;
+}
