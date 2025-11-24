@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .container { border: 1px solid #ddd; padding: 20px; width: 300px; border-radius: 5px; }
+        input { display: block; width: 90%; margin-bottom: 10px; padding: 5px; }
+        button { padding: 5px 10px; cursor: pointer; }
+        button:disabled { background-color: #ccc; cursor: not-allowed; }
+        #message { margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register :</h2>
+        <form id="regForm">
+            <input type="text" id="name" placeholder="First name" required>
+            <input type="text" id="lastname" placeholder="Last name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="username" placeholder="username" required>
+            <input type="password" id="password" placeholder="password" required>
+            <button type="submit" id="submitBtn">Register</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('regForm');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const data = {
+                name: document.getElementById('name').value,
+                lastname: document.getElementById('lastname').value,
+                email: document.getElementById('email').value,
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value
+            };
+
+            const res = await fetch('/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await res.json();
+            messageDiv.innerText = result.message;
+        });
+    </script>
+</body>
+</html>
