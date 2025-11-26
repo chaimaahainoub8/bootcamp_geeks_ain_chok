@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 // Import Components
 import Day1XP from './Day1/ExercisesXP/ParentExercise';
 import Day1Daily from './Day1/DailyChallenge';
@@ -14,6 +15,9 @@ import Day3Daily from './Day3/DailyChallenge';
 
 import Day4XP from './Day4/ExercisesXP/ParentExercise';
 import Day4Daily from './Day4/DailyChallenge';
+
+import QuoteGenerator from './Day5/QuoteGenerator.js';
+import Calculator from './Day5/DailyChallenge';
 
 function App() {
   return (
@@ -47,6 +51,11 @@ function App() {
             <li><Link to="/day4/xp">Exercises XP</Link></li>
             <li><Link to="/day4/daily">Daily Challenge</Link></li>
           </ul>
+          <h6 className="fw-bold mt-3 text-warning">Day 5 (Mini Project)</h6>
+<ul className="list-unstyled ps-2">
+  <li><Link to="/day5/quote">Quote Generator</Link></li>
+  <li><Link to="/day5/calculator">Calculator</Link></li>
+</ul>
         </div>
 
         {/* Main Content */}
@@ -69,6 +78,10 @@ function App() {
             {/* Day 4 Routes (With nested routes for Ex 1) */}
             <Route path="/day4/xp/*" element={<Day4XP />} />
             <Route path="/day4/daily" element={<Day4Daily />} />
+           
+            {/* Day 5 Routes */}
+            <Route path="/day5/quote" element={<QuoteGenerator />} />
+            <Route path="/day5/calculator" element={<Calculator />} />
           </Routes>
         </div>
       </div>
